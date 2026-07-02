@@ -26,7 +26,6 @@ export default function HistoryList({ history }) {
         <div className="history-list">
           {history.map((item, idx) => {
             const isHigh = item.result === 'Too High';
-            const diff = item.guess - item.target;
             
             return (
               <div 
@@ -37,7 +36,7 @@ export default function HistoryList({ history }) {
                   <span className="history-guess">{item.guess}</span>
                 </div>
                 <span className={`history-badge ${isHigh ? 'badge-high' : 'badge-low'}`}>
-                  {item.result} ({diff > 0 ? `+${diff}` : diff})
+                  {item.result}
                 </span>
               </div>
             );
