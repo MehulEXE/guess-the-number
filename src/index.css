@@ -122,7 +122,9 @@ h1 {
 
 /* Glassmorphic Card base styling */
 .glass-card {
-  background: var(--card-bg);
+  background:
+    linear-gradient(130deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%),
+    var(--card-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border);
@@ -132,17 +134,6 @@ h1 {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-}
-
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: linear-gradient(130deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 60%);
-  pointer-events: none;
 }
 
 /* Stats view styling */
@@ -246,6 +237,7 @@ h1 {
 
 .guess-input {
   flex: 1;
+  min-width: 0;
   background: rgba(0, 0, 0, 0.2);
   border: 2px solid var(--card-border);
   border-radius: 16px;
